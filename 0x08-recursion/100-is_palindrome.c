@@ -57,3 +57,19 @@ int helper(char *s, int len, int a)
 	else
 		return (helper(s, --len, ++a));
 }
+int helper(char *s, int len, int a)
+{
+	if (len ==  a)
+		return (1);
+	else if (len - a == 1)
+	{
+		if (s[len] == s[a])
+			return (1);
+		else
+			return (0);
+	}
+	else if (s[len] != s[a])
+		return (0);
+	else
+		return (helper(s, --len, ++a));
+}
